@@ -28,6 +28,7 @@ start_link() ->
          end;
     Error -> Error
     end.
+
 %%
 %%
 %% @doc An active alarm is tracked by the unique alarm id. A duplicated alarm id will not be added.
