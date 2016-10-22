@@ -11,7 +11,7 @@
 %% ====================================================================
 -export([start_link/0, quick_raise/5, raise/1, clear/1,
          get_active/0, get_historical/0,
-         pr_active/0, pr_historical/0, help/0]).
+         pr_active/0, pr_historical/0, help/0,list_handlers/0]).
 
 help() -> not_ok.
 
@@ -29,6 +29,8 @@ start_link() ->
     Error -> Error
     end.
 
+list_hanlder() ->
+    gen_event:which_handlers(?ALARM_MANAGER).
 %%
 %%
 %% @doc An active alarm is tracked by the unique alarm id. A duplicated alarm id will not be added.
